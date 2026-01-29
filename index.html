@@ -13,75 +13,67 @@
       justify-content: center;
     }
 
-    /* ✅ 모바일 기본: 화면 꽉 */
     .wrapper {
       position: relative;
-      width: 100%;
-      max-width: 480px;
+      width: 100%; /* ✅ 모바일 기본: 화면 꽉 */
       margin: auto;
     }
 
     /* ✅ PC: 화면 60% */
     @media (min-width: 900px) {
       .wrapper {
-        max-width: none;
         width: 60%;
       }
     }
 
+    /* ✅ PNG 원본 이미지 */
     .wrapper img {
       width: 100%;
       display: block;
     }
 
-    /* 클릭 영역 */
+    /* 클릭 영역 공통 */
     .click-zone {
       position: absolute;
       left: 5%;
       width: 90%;
-      height: 13%;
+      height: 15%;
       cursor: pointer;
-    }
-    .click-zone {
-      position: absolute;
-      left: 5%;
-      width: 90%;
-      height: 13%;
-      cursor: pointer;
+
+      /* ✅ 위치 확인용 */
+  border: 2px solid red;
+  background: rgba(255, 0, 0, 0.15);
     }
 
-    /* ✅ PC 클릭 위치 */
-    .zone-live { top: 48.5%; }
-    .zone-talk { top: 66%; }
-    .zone-tele { top: 82.5%; }
+    /* ✅ 각각 위치 조정 */
+    .zone-live { top: 47.9%; }
+    .zone-talk { top: 64.7%; }
+    .zone-tele { top: 81.5%; }
 
-    /* ✅ 모바일 클릭 위치 보정 */
-    @media (max-width: 480px) {
-      .zone-live { top: 51%; }
-      .zone-talk { top: 68.5%; }
-      .zone-tele { top: 85%; }
+    /* 클릭 시 살짝 효과 */
+    .click-zone:hover { opacity: 0.98; }
 
-      /* 모바일 터치 편하게 */
-      .click-zone { height: 14%; }
-    }
   </style>
 </head>
 
 <body>
   <div class="wrapper">
 
-    <img src="./landing.png" alt="바닥이야기 랜딩">
+    <img src="landing.png" alt="바닥이야기 랜딩">
 
     <a href="https://open.kakao.com/o/g1nwC04h"
        target="_blank"
+       rel="noopener noreferrer"
        class="click-zone zone-live"></a>
 
     <a href="https://open.kakao.com/o/sU3adVUh"
        target="_blank"
+       rel="noopener noreferrer"
        class="click-zone zone-talk"></a>
 
     <a href="https://t.me/storyinquiry"
        target="_blank"
+       rel="noopener noreferrer"
        class="click-zone zone-tele"></a>
 
   </div>
