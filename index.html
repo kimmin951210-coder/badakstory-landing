@@ -42,31 +42,44 @@
       height: 13%;
       cursor: pointer;
     }
+    .click-zone {
+      position: absolute;
+      left: 5%;
+      width: 90%;
+      height: 13%;
+      cursor: pointer;
+    }
 
-    /* 클릭 위치 */
-    .zone-live { top: 47%; }
-    .zone-talk { top: 63%; }
-    .zone-tele { top: 79%; }
+    /* ✅ PC 클릭 위치 */
+    .zone-live { top: 48.5%; }
+    .zone-talk { top: 66%; }
+    .zone-tele { top: 82.5%; }
+
+    /* ✅ 모바일 클릭 위치 보정 */
+    @media (max-width: 480px) {
+      .zone-live { top: 51%; }
+      .zone-talk { top: 68.5%; }
+      .zone-tele { top: 85%; }
+
+      /* 모바일 터치 편하게 */
+      .click-zone { height: 14%; }
+    }
   </style>
 </head>
 
 <body>
   <div class="wrapper">
 
-    <!-- ✅ 메인 이미지 -->
     <img src="./landing.png" alt="바닥이야기 랜딩">
 
-    <!-- LIVE -->
     <a href="https://open.kakao.com/o/g1nwC04h"
        target="_blank"
        class="click-zone zone-live"></a>
 
-    <!-- 카카오톡 -->
     <a href="https://open.kakao.com/o/sU3adVUh"
        target="_blank"
        class="click-zone zone-talk"></a>
 
-    <!-- 텔레그램 -->
     <a href="https://t.me/storyinquiry"
        target="_blank"
        class="click-zone zone-tele"></a>
