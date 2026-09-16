@@ -6,6 +6,29 @@
 
   <title>바닥이야기</title>
 
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RH05XYE84B"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-RH05XYE84B');
+
+    function trackClick(eventName, buttonName, linkUrl) {
+      gtag('event', eventName, {
+        event_category: 'landing_button',
+        button_name: buttonName,
+        link_url: linkUrl,
+        transport_type: 'beacon'
+      });
+    }
+  </script>
+
   <style>
     * {
       box-sizing: border-box;
@@ -48,7 +71,6 @@
       position: absolute;
       left: 6.2%;
       width: 87.6%;
-
       display: block;
       cursor: pointer;
       z-index: 10;
@@ -96,7 +118,12 @@
       href="https://open.kakao.com/o/g1nwC04h"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="생방송 공지방">
+      aria-label="생방송 공지방"
+      onclick="trackClick(
+        'broadcast_notice_click',
+        '생방송 공지방',
+        this.href
+      )">
     </a>
 
     <!-- 2. 카카오톡 문의 -->
@@ -105,7 +132,12 @@
       href="https://open.kakao.com/o/s266v8Ag"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="카카오톡 문의">
+      aria-label="카카오톡 문의"
+      onclick="trackClick(
+        'kakao_click',
+        '카카오톡 문의',
+        this.href
+      )">
     </a>
 
     <!-- 3. 텔레그램 문의 -->
@@ -114,7 +146,12 @@
       href="https://telegram.me/storyinquiry"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="텔레그램 문의">
+      aria-label="텔레그램 문의"
+      onclick="trackClick(
+        'telegram_click',
+        '텔레그램 문의',
+        this.href
+      )">
     </a>
 
     <!-- 4. 바닥이야기 가족방 -->
@@ -123,7 +160,12 @@
       href="https://open.kakao.com/o/gJqGHqLi"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="바닥이야기 가족방">
+      aria-label="바닥이야기 가족방"
+      onclick="trackClick(
+        'family_room_click',
+        '바닥이야기 가족방',
+        this.href
+      )">
     </a>
 
   </div>
